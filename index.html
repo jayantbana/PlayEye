@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayEye - Online Game Directory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;700&family=Audiowide&family=Press+Start+2P&family=Rajdhani:wght@400;700&family=Bebas+Neue&family=Anton&family=Oswald:wght@400;700&family=VT323&family=Oxanium:wght@400;700&family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Press+Start+2P&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo:wght@400;700&family=Orbitron:wght@400;700&family=Press+Start+2P&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+
+      
+
+</head>
+<body>
+    <!-- Preloader -->
+<div id="preloader">
+    <div class="glitch-text">LOADING...</div>
+    <div class="loading-bar">
+        <div class="progress"></div>
+    </div>
+</div>
+
+<!-- Main Content (Initially Hidden) -->
+<div id="content" style="display: none;">
+   
+</div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">PlayEye</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#popular">Popular Games</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#new">New Releases</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section with Website Name and Description -->
+        <section id="home" class="hero">
+            <h1>Welcome to PlayEye</h1>
+            <p>Your ultimate destination for discovering the best online games</p>
+            
+        </section>
+        
+        <!-- Popular Games Section -->
+        <section id="popular" class="games-section">
+            <h2 class="section-title">Popular Games</h2>
+            <div class="game-cards">
+                <!-- Example Game Card 1 -->
+                <div class="game-card" onclick="window.open('https://2048game.com/', '_blank')">
+                    <img src="2048_pic.jpg" alt="Game 1">
+                    <div class="card-content">
+                        <h3>2048 Game</h3>
+                        <p>2048 is an easy and fun puzzle game. Even if you don't love numbers you will love this classic game</p>
+                        <div class="card-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Board Game</span>
+                        </div>
+                        <a href="https://2048game.com/" class="play-btn" target="_blank">Play Now</a>
+                    </div>
+                </div>
+                
+                <!-- Example Game Card 2 -->
+                <div class="game-card" onclick="window.open('http://slither.com/io', '_blank')">
+                    <img src="slither.jpg" alt="Game 2">
+                    <div class="card-content">
+                        <h3>Slither.io</h3>
+                        <p>The famous online snake hunting game! Join the thrilling world of snake hunting, conquer high scores, and challenge your friends.</p>
+                        <div class="card-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Sci-Fi</span>
+                            <span class="tag">Multiplayer</span>
+                        </div>
+                        <a href="http://slither.com/io" class="play-btn" target="_blank">Play Now</a>
+                    </div>
+                </div>
+                
+                <!-- Example Game Card 3 -->
+                <div class="game-card" onclick="window.open('https://littlealchemy2.com/', '_blank')">
+                    <img src="la2.jpg" alt="Game 3">
+                    <div class="card-content">
+                        <h3>Little Alchemy 2</h3>
+                        <p>Mix items and create the world from scratch! Discover interesting items , lose yourself exploring the huge.</p>
+                        <div class="card-tags">
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Brain-teaser</span>
+                            <span class="tag">Casual</span>
+                            
+                        </div>
+                        <a href="https://littlealchemy2.com/" class="play-btn" target="_blank">Play Now</a>
+                    </div>
+                </div>
+                
+                    <!-- Existing Game Cards -->
+                    
+                    <!-- New Game Card 4 -->
+                    <div class="game-card" onclick="window.open('https://evoworld.io', '_blank')">
+                        <img src="ew.jpg" alt="Game 4">
+                        <div class="card-content">
+                            <h3>Evoworld.io</h3>
+                            <p>A multiplayer survival game where you start out as a teeny tiny fly with the potential to grow big!.</p>
+                            <div class="card-tags">
+                                <span class="tag">Adventure</span>
+                                <span class="tag">Trivia</span>
+                                <span class="tag">Jungle</span>
+                            </div>
+                            <a href="https://evoworld.io" class="play-btn" target="_blank">Play Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- New Game Card 5 -->
+                    <div class="game-card" onclick="window.open('https://lichess.org/', '_blank')">
+                        <img src="l.jpg" alt="Game 5">
+                        <div class="card-content">
+                            <h3>Lichess</h3>
+                            <p>One of the best free online chess platforms. Play and boost your chess skills.Compete with online players.</p>
+                            <div class="card-tags">
+                                <span class="tag">Board game</span>
+                                <span class="tag">Strategy</span>
+                                <span class="tag">Brain-teaser</span>
+                            </div>
+                            <a href="https://lichess.org/" class="play-btn" target="_blank">Play Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- New Game Card 6 -->
+                    <div class="game-card" onclick="window.open('https://ev.io/', '_blank')">
+                        <img src="evio.webp" alt="Game 6">
+                        <div class="card-content">
+                            <h3>EV.IO</h3>
+                            <p>Ev.io is a multiplayer FPS game set in a futuristic arena. The game features tactical level designs .</p>
+                            <div class="card-tags">
+                                <span class="tag">Shooter</span>
+                                <span class="tag">Battle Royale</span>
+                                <span class="tag">PvP</span>
+                            </div>
+                            <a href="https://ev.io/" class="play-btn" target="_blank">Play Now</a>
+                        </div>
+                    </div>
+                
+                
+                <!-- Add more game cards as needed -->
+            </div>
+        </section>
+    </div>
+   
+    
+    
+    
+    <footer>
+        <p>&copy; 2025 GameHub - All Rights Reserved</p>
+    </footer>
+    
+  
+</body>
+</html>
