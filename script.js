@@ -1,88 +1,76 @@
-  // JavaScript to enable smooth scrolling for navigation links
-  document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            document.querySelector(targetId).scrollIntoView({
+                behavior: "smooth"
+            });
         });
     });
-});
-// Mouse tracking cursor effect
-document.body.style.cursor = "url('https://cur.cursors-4u.net/games/gam-1/gam16.ani'), auto";
 
+    // Multi-language loading text effect
+    const loadingTexts = [
+        "Loading...", "लोड हो रहा है...", "Cargando...", "加载中...",
+        "لوڈ ہو رہا ہے...", "लोडयति...", "読み込み中...", "Chargement...",
+        "Lädt...", "Загрузка..."
+    ];
 
-// Start the animation
-animateCursor();
+    let index = 0;
+    const loadingTextElement = document.getElementById("glitch-text");
 
-// Special effects when hovering over game cards
-const gameCards = document.querySelectorAll('.game-card');
-
-gameCards.forEach(card => {
-// Grow cursor when hovering over cards
-card.addEventListener('mouseenter', () => {
-    cursorOuter.classList.add('cursor-hover');
-    cursorInner.classList.add('cursor-hover');
-});
-
-card.addEventListener('mouseleave', () => {
-    cursorOuter.classList.remove('cursor-hover');
-    cursorInner.classList.remove('cursor-hover');
-});
-
-// Add card tilt effect
-card.addEventListener('mousemove', (e) => {
-    const cardRect = card.getBoundingClientRect();
-    const cardCenterX = cardRect.left + cardRect.width / 2;
-    const cardCenterY = cardRect.top + cardRect.height / 2;
-    
-    // Calculate distance from center (normalized from -1 to 1)
-    const percentX = (e.clientX - cardCenterX) / (cardRect.width / 2);
-    const percentY = (e.clientY - cardCenterY) / (cardRect.height / 2);
-    
-    // Apply the tilt effect (max 10 degrees rotation)
-    card.style.transform = `perspective(1000px) rotateY(${percentX * 5}deg) rotateX(${-percentY * 5}deg) translateZ(10px)`;
-});
-
-// Reset transform when mouse leaves
-card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-    setTimeout(() => {
-        // Re-apply the hover effect without the tilt
-        if (card.matches(':hover')) {
-            card.style.transform = 'translateY(-15px) scale(1.03)';
+    function changeText() {
+        if (index < loadingTexts.length) {
+            loadingTextElement.textContent = loadingTexts[index];
+            index++;
+            setTimeout(changeText, 300); // Change every 300ms
         }
-    }, 50);
-});
-});
+    }
 
-// Hide default cursor
-document.body.style.cursor = 'none';
+    changeText(); // Start the text animation
 
-// Show default cursor when cursor leaves the window
-document.addEventListener('mouseout', function(e) {
-if (e.relatedTarget === null) {
-    document.body.style.cursor = 'auto';
-    cursorOuter.style.display = 'none';
-    cursorInner.style.display = 'none';
-}
-});
-
-document.addEventListener('mouseover', function() {
-document.body.style.cursor = 'none';
-cursorOuter.style.display = 'block';
-cursorInner.style.display = 'block';
-});
-});
-// Image roller/slider for game showcase
-
-  
-
-setTimeout(() => {
-    document.getElementById("preloader").classList.add("fadeOut"); // Fade out preloader
+    // Preloader logic to hide after 3 seconds
     setTimeout(() => {
-        document.getElementById("preloader").style.display = "none"; // Remove preloader
-        document.getElementById("content").style.display = "block"; // Show main website
-    }, 500); // Wait for fade-out animation to finish
-}, 3000);
+        document.getElementById("preloader").classList.add("fadeOut"); // Apply fade-out effect
+        setTimeout(() => {
+            document.getElementById("preloader").style.display = "none"; // Hide preloader
+            document.getElementById("content").style.display = "block"; // Show main content
+        }, 500); // Wait for fade-out animation to finish
+    }, 3000); // Total preloading time
+
+    // Game card hover effects
+    const gameCards = document.querySelectorAll(".game-card");
+
+    gameCards.forEach(card => {
+        card.addEventListener("mouseenter", () => {
+            card.style.transform = "translateY(-10px) scale(1.05)";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "translateY(0) scale(1)";
+        });
+
+        card.addEventListener("mousemove", (e) => {
+            const cardRect = card.getBoundingClientRect();
+            const percentX = (e.clientX - (cardRect.left + cardRect.width / 2)) / (cardRect.width / 2);
+            const percentY = (e.clientY - (cardRect.top + cardRect.height / 2)) / (cardRect.height / 2);
+
+            card.style.transform = `perspective(1000px) rotateY(${percentX * 5}deg) rotateX(${-percentY * 5}deg)`;
+        });
+    });
+
+    // Hide default cursor
+    document.body.style.cursor = "none";
+
+    // Show default cursor when leaving the window
+    document.addEventListener("mouseout", function (e) {
+        if (e.relatedTarget === null) {
+            document.body.style.cursor = "auto";
+        }
+    });
+
+    document.addEventListener("mouseover", function () {
+        document.body.style.cursor = "none";
+    });
+});

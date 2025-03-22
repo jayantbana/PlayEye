@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayEye - Online Game Directory</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+   
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;700&family=Audiowide&family=Press+Start+2P&family=Rajdhani:wght@400;700&family=Bebas+Neue&family=Anton&family=Oswald:wght@400;700&family=VT323&family=Oxanium:wght@400;700&family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Press+Start+2P&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
@@ -15,14 +15,21 @@
       
 
 </head>
+<script src="script.js"></script>
 <body>
     <!-- Preloader -->
-<div id="preloader">
-    <div class="glitch-text">LOADING...</div>
-    <div class="loading-bar">
-        <div class="progress"></div>
+    <div id="preloader" style="background: black; color: white; height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h1 id="glitch-text">Loading...</h1>
     </div>
-</div>
+    
+    <div id="content" style="display: none;">
+        <!-- Your actual website content goes here -->
+    </div>
+    
+   
+        <!-- Your actual website content goes here -->
+   
+    
 
 <!-- Main Content (Initially Hidden) -->
 <div id="content" style="display: none;">
@@ -40,6 +47,12 @@
             <li><a href="#about">About</a></li>
         </ul>
     </nav>
+    
+    
+   
+        <!-- Your actual website content goes here -->
+    </div>
+    
     
     <!-- Main Content -->
     <div class="main-content">
@@ -161,7 +174,148 @@
                             <a href="https://sachinpunetha.github.io/TIC-TAC-TOE/" class="play-btn" target="_blank">Play Now</a>
                         </div>
                     </div>
-                <!-- Add more game cards as needed -->
+                
+                <!-- Game 7 - Krunker.io -->
+<div class="game-card" onclick="window.open('https://krunker.io/', '_blank')">
+    <img src="krunker.jpg" alt="Game 7">
+    <div class="card-content">
+        <h3>Krunker.io</h3>
+        <p>A fast-paced multiplayer first-person shooter with pixel graphics.</p>
+        <div class="card-tags">
+            <span class="tag">Shooter</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <a href="https://krunker.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 8 - Shell Shockers -->
+<div class="game-card" onclick="window.open('https://shellshock.io/', '_blank')">
+    <img src="shell_shockers.webp" alt="Game 8">
+    <div class="card-content">
+        <h3>Shell Shockers</h3>
+        <p>Battle as an egg in this unique multiplayer FPS game.</p>
+        <div class="card-tags">
+            <span class="tag">Shooter</span>
+            <span class="tag">Battle Royale</span>
+        </div>
+        <a href="https://shellshock.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 9 - Paper.io 2 -->
+<div class="game-card" onclick="window.open('https://paper-io.com/', '_blank')">
+    <img src="paper2.jpg" alt="Game 9">
+    <div class="card-content">
+        <h3>Paper.io 2</h3>
+        <p>Expand your territory and dominate the leaderboard!</p>
+        <div class="card-tags">
+            <span class="tag">Strategy</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <a href="https://paper-io.com/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 10 - Zombs Royale -->
+<div class="game-card" onclick="window.open('https://zombsroyale.io/', '_blank')">
+    <img src="zombroyale.jpg" alt="Game 10">
+    <div class="card-content">
+        <h3>Zombs Royale</h3>
+        <p>A battle royale game with zombies and 100-player matches.</p>
+        <div class="card-tags">
+            <span class="tag">Battle Royale</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <a href="https://zombsroyale.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 11 - Gartic Phone -->
+<div class="game-card" onclick="window.open('https://garticphone.com/', '_blank')">
+    <img src="gartic.jpg" alt="Game 11">
+    <div class="card-content">
+        <h3>Gartic Phone</h3>
+        <p>A fun drawing and guessing game to play with friends.</p>
+        <div class="card-tags">
+            <span class="tag">Casual</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <a href="https://garticphone.com/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 12 - Moto X3M -->
+<div class="game-card" onclick="window.open('https://www.crazygames.com/game/moto-x3m', '_blank')">
+    <img src="motox3m.jpg" alt="Game 12">
+    <div class="card-content">
+        <h3>Moto X3M</h3>
+        <p>Perform insane stunts in this exciting bike racing game.</p>
+        <div class="card-tags">
+            <span class="tag">Racing</span>
+            <span class="tag">Arcade</span>
+        </div>
+        <a href="https://www.crazygames.com/game/moto-x3m" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 13 - 1v1.LOL -->
+<div class="game-card" onclick="window.open('https://1v1.lol/', '_blank')">
+    <img src="1v1.jpg" alt="Game 13">
+    <div class="card-content">
+        <h3>1v1.LOL</h3>
+        <p>A battle royale building and shooting game like Fortnite.</p>
+        <div class="card-tags">
+            <span class="tag">Shooter</span>
+            <span class="tag">Battle Royale</span>
+        </div>
+        <a href="https://1v1.lol/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 14 - Sudoku Online -->
+<div class="game-card" onclick="window.open('https://www.sudokuonline.io/', '_blank')">
+    <img src="soduko.jpg" alt="Game 14">
+    <div class="card-content">
+        <h3>Sudoku Online</h3>
+        <p>Train your brain with this classic Sudoku puzzle game.</p>
+        <div class="card-tags">
+            <span class="tag">Puzzle</span>
+            <span class="tag">Brain Teaser</span>
+        </div>
+        <a href="https://www.sudokuonline.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 15 - Diep.io -->
+<div class="game-card" onclick="window.open('https://diep.io/', '_blank')">
+    <img src="diep.jpg" alt="Game 15">
+    <div class="card-content">
+        <h3>Diep.io</h3>
+        <p>Upgrade your tank and dominate in this battle arena.</p>
+        <div class="card-tags">
+            <span class="tag">Strategy</span>
+            <span class="tag">Multiplayer</span>
+        </div>
+        <a href="https://diep.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+<!-- Game 16 - Tetris Online -->
+<div class="game-card" onclick="window.open('https://tetr.io/', '_blank')">
+    <img src="tetris.jpg" alt="Game 16">
+    <div class="card-content">
+        <h3>Tetris Online</h3>
+        <p>Enjoy the classic Tetris gameplay online for free.</p>
+        <div class="card-tags">
+            <span class="tag">Puzzle</span>
+            <span class="tag">Classic</span>
+        </div>
+        <a href="https://tetr.io/" class="play-btn" target="_blank">Play Now</a>
+    </div>
+</div>
+
+                    <!-- Add more game cards as needed -->
             </div>
         </section>
     </div>

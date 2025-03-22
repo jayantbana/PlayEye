@@ -594,3 +594,13 @@ h1, h2, h3 {
     color: #00FFFF; /* Neon Cyan */
     text-shadow: 0 0 10px #00FFFF, 0 0 20px #FF00FF;
 }
+#glitch-text {
+    font-size: 2em;
+    font-weight: bold;
+    animation: fade 0.3s ease-in-out;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
