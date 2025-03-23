@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&family=Press+Start+2P&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo:wght@400;700&family=Orbitron:wght@400;700&family=Press+Start+2P&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
       
 
@@ -42,7 +43,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#popular">Popular Games</a></li>
-            <li><a href="#categories">Categories</a></li>
+            <li><a href="category.html">Categories</a></li>
             <li><a href="#new">New Releases</a></li>
             <li><a href="#about">About</a></li>
         </ul>
@@ -319,12 +320,25 @@
             </div>
         </section>
     </div>
-   
+    <audio id="bg-music" loop>
+        <source src="c9dc2de17905a042f36090791a93bfa0_160.m4a" type="audio/mpeg">
+    </audio>
     
+    <div id="music-controls">
+        <button onclick="prevSong()">⏮️ Prev</button>
+        <button id="music-btn" onclick="toggleMusic()">🔊 Play</button>
+        <button onclick="nextSong()">⏭️ Next</button>
+    </div>
+    
+   
+    <section class="parallax">
+        <h1>Welcome to Game Directory</h1>
+    </section>   
     
     
     <footer>
         <p>&copy; 2025 PlayEye - All Rights Reserved</p>
+        <p> Made by Jayant </p>
     </footer>
     
   

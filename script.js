@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
+    // 🔹 Smooth Scrolling for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Multi-language loading text effect
+    // 🔹 Multi-language Loading Text Effect
     const loadingTexts = [
         "Loading...", "लोड हो रहा है...", "Cargando...", "加载中...",
         "لوڈ ہو رہا ہے...", "लोडयति...", "読み込み中...", "Chargement...",
@@ -27,19 +27,19 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(changeText, 300); // Change every 300ms
         }
     }
-
     changeText(); // Start the text animation
 
-    // Preloader logic to hide after 3 seconds
+    // 🔹 Preloader Logic (Improved Smooth Transition)
     setTimeout(() => {
-        document.getElementById("preloader").classList.add("fadeOut"); // Apply fade-out effect
+        document.getElementById("preloader").classList.add("fadeOut");
         setTimeout(() => {
-            document.getElementById("preloader").style.display = "none"; // Hide preloader
-            document.getElementById("content").style.display = "block"; // Show main content
-        }, 500); // Wait for fade-out animation to finish
-    }, 3000); // Total preloading time
+            document.getElementById("preloader").style.opacity = "0";
+            document.getElementById("preloader").style.visibility = "hidden";
+            document.getElementById("content").style.opacity = "1";
+        }, 500);
+    }, 3000);
 
-    // Game card hover effects
+    // 🔹 Game Card Hover Effects
     const gameCards = document.querySelectorAll(".game-card");
 
     gameCards.forEach(card => {
@@ -60,10 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Hide default cursor
+    // 🔹 Fix Cursor Visibility Issue
     document.body.style.cursor = "none";
 
-    // Show default cursor when leaving the window
     document.addEventListener("mouseout", function (e) {
         if (e.relatedTarget === null) {
             document.body.style.cursor = "auto";
@@ -73,4 +72,105 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("mouseover", function () {
         document.body.style.cursor = "none";
     });
+
+    // 🔹 Background Music Controls (Fixed)
+    const songs = [
+        "cc9dc2de17905a042f36090791a93bfa0_160.m4a",
+        "song2.mp3",
+        "song3.mp3",
+        "song4.mp3",
+        "song5.mp3"
+    ];
+
+    let currentSongIndex = 0;
+    const music = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("music-btn");
+    const prevBtn = document.getElementById("prev-song");
+    const nextBtn = document.getElementById("next-song");
+    const audioSource = document.getElementById("audio-source");
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            musicBtn.textContent = "🔇 Pause";
+        } else {
+            music.pause();
+            musicBtn.textContent = "🔊 Play";
+        }
+    }
+
+    function nextSong() {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        changeSong();
+    }
+
+    function prevSong() {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        changeSong();
+    }
+
+    function changeSong() {
+        audioSource.src = songs[currentSongIndex];
+        music.load();
+        music.play();
+        musicBtn.textContent = "🔇 Pause";
+    }
+
+    musicBtn.addEventListener("click", toggleMusic);
+    prevBtn.addEventListener("click", prevSong);
+    nextBtn.addEventListener("click", nextSong);
+
+    window.addEventListener("load", () => {
+        music.volume = 0.5;
+        changeSong();
+    });
+
+    // 🔹 Category Filtering (Fixed Layout Issues)
+    const categoryButtons = document.querySelectorAll(".category-btn");
+
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const category = this.getAttribute("data-category");
+            gameCards.forEach(card => {
+                if (category === "all" || card.getAttribute("data-category") === category) {
+                    card.style.opacity = "1";
+                    card.style.visibility = "visible";
+                    card.style.transform = "scale(1)";
+                } else {
+                    card.style.opacity = "0";
+                    card.style.visibility = "hidden";
+                    card.style.transform = "scale(0.8)";
+                }
+            });
+        });
+    });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".game-card");
+
+    const revealCards = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        cards.forEach((card) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const cardBottom = card.getBoundingClientRect().bottom;
+
+            if (cardTop < triggerBottom && cardBottom > 0) {
+                card.classList.add("show");
+            } else {
+                card.classList.remove("show"); // Remove class when out of view
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealCards);
+    revealCards(); // Initial check when page loads
+});
+window.addEventListener("scroll", function() {
+    let scrollPosition = window.scrollY;
+    document.getElementById("parallax").style.backgroundPositionY = scrollPosition * 0.5 + "px";
+});
+
+

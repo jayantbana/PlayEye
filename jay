@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+
+
+.game-card {
+    background: rgba(20, 20, 20, 0.8);
+    color: cyan;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect */
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Active (Click) Effect */
+.game-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 1);
+}
+
+/* Neon Glow for Text */
+.game-card h3 {
+    background: linear-gradient(90deg, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Navigation Bar */
+/* Fix Navbar Overlapping */
+.navbar {
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+    z-index: 1000; /* Ensures it stays above everything */
+}
+
+/* Push body content down to prevent overlap */
+body {
+    margin: 0;
+    padding-top: 70px; /* Adjust this value based on your navbar height */
+}

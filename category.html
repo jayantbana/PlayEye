@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Categories - PlayEye</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">PlayEye</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="new.html">New Releases</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Categories Section -->
+    <section class="categories">
+       
+        <div class="category-container">
+            <div class="category-card" onclick="showGames('strategy')">
+                <h3>🧠 Strategy Games</h3>
+            </div>
+            <div class="category-card" onclick="showGames('adventure')">
+                <h3>🌍 Adventure Games</h3>
+            </div>
+            <div class="category-card" onclick="showGames('shooter')">
+                <h3>🔫 Shooter Games</h3>
+            </div>
+            <div class="category-card" onclick="showGames('racing')">
+                <h3>🏎️ Racing Games</h3>
+            </div>
+            <div class="category-card" onclick="showGames('puzzle')">
+                <h3>🧩 Puzzle Games</h3>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Game Popup Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="categoryTitle"></h2>
+            <div id="gameList"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 PlayEye - All Rights Reserved</p>
+    </footer>
+    
+
+</body>
+</html>

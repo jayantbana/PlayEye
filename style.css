@@ -559,18 +559,19 @@ footer {
 
 
 body {
-    background-image: url('1391.jpg');
-    background-repeat: repeat; 
+    background: #121212;
+
+ 
   }
 /* For headings and titles */
 h1, h2, h3 {
-    font-family: 'Orbitron', sans-serif;
+    
     font-weight: 700;
 }
 
 /* For buttons and important UI elements */
 button, .game-title {
-    font-family: 'Exo 2', sans-serif;
+    
     font-weight: 700;
 }
 
@@ -581,9 +582,11 @@ button, .game-title {
 
 /* For general text readability */
 body {
-    font-family: 'Exo', sans-serif; /* Futuristic & Clean */
-    color: white;
-    background-color: #121212; /* Dark Theme */
+    
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 /* 🎮 Main Titles (H1, H2, H3) - Sci-Fi Style */
@@ -603,4 +606,139 @@ h1, h2, h3 {
 @keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+#music-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#music-controls button {
+    background: #ff5722;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+}
+
+#music-controls button:hover {
+    background: #e64a19;
+}
+/* Category Cards */
+/* Container Styling */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Category Button Styling */
+.category-card {
+    background: rgba(20, 20, 20, 0.8);
+    color: cyan;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect */
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Active (Click) Effect */
+.category-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 1);
+}
+
+/* Neon Glow for Text */
+.category-card h3 {
+    background: linear-gradient(90deg, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Navigation Bar */
+/* Fix Navbar Overlapping */
+.navbar {
+    position: fixed; /* Keeps it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.3);
+    z-index: 1000; /* Ensures it stays above everything */
+}
+
+/* Push body content down to prevent overlap */
+body {
+    margin: 0;
+    padding-top: 70px; /* Adjust this value based on your navbar height */
+}
+/* Smooth fade-in animation for game cards */
+
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.play-btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-btn:hover {
+    background-color: #ff5733; /* Change to your preferred color */
+    transform: scale(1.1);
+}
+/* Game Card - Initial Hidden State */
+.game-card {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Game Card - When Visible */
+.game-card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hover Effect for Game Cards */
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Play Button Hover Effect */
+.play-btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-btn:hover {
+    background-color: #ff5733; /* Change this if needed */
+    transform: scale(1.1);
 }
